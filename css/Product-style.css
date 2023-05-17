@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Noto+Sans|Open+Sans:500,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+@font-face {
+	font-family: "AlfaSlabOne";
+	src: url("../assets/alfaslabone_regular.ttf");
+}
+
+BODY {
+	background-color: #E8E8E8;
+}
+
+
+
+
+.navbar {
+	display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px;
+    position: sticky;
+    top: 0px;
+    padding-bottom: 8px;
+	background-color: #FFA384;
+  z-index: 1;
+  }
+
+.navbar a {
+  	color: #FF3131;
+  	text-decoration: none;
+	padding-right: 60px;
+	font-size: 1em;
+}
+
+.logo{
+    margin-right: 50px;
+    flex: 1;
+	
+}
+
+.navlogo {
+  cursor: pointer;
+  padding: 1vw;
+	margin-left: 20px;
+  height: 10vw;
+  width: auto;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    column-gap:  25px;
+	font-family: "AlfaSlabOne";
+}
+
+.list a:hover, a.active{
+   	color: maroon;
+    cursor: pointer;
+	text-decoration: underline;
+}
+
+.header{
+    font-family: "AlfaSlabOne";
+    text-align: center;
+    font-size: 32px;
+    padding-top: 50px;
+}
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.product-card {
+  background: whitesmoke;
+  width: 250px; /* Adjust the width as needed */
+  flex-grow: 1; /* Allow cards to expand */
+  height: auto;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-card h2 {
+  font-family: "AlfaSlabOne";
+  text-align: center;
+  font-size: 16px; /* Adjust the font size as needed */
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.product-card h3 {
+  font-family: "AlfaSlabOne";
+  text-align: center;
+  margin-top: 8px;
+  color: maroon;
+  font-size: 18px; /* Adjust the font size as needed */
+}
+
+.product-card p {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-size: 12px; /* Adjust the font size as needed */
+  padding: 8px;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.product-card button {
+  cursor: pointer;
+  font-family: "AlfaSlabOne";
+  text-decoration: none;
+  color: maroon;
+  background-color: #FFA384;
+  border: maroon 1px solid;
+  padding: 4px;
+  margin: 10px;
+}
+.img-box{
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  #container {
+    justify-content: flex-start;
+  }
+
+  .product-card {
+    margin-bottom: 50px;
+  }
+}
+
+
+.product-card:hover{
+    background-color: #FFA384;
+    color: maroon;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 1s ease;
+}
+
+
+
+/* Card Responsiveness */
+@media screen and (min-width: 768px) {
+    #container {
+      margin: 50px auto;
+      max-width: 960px;
+      flex-wrap: wrap;
+    }
+    
+    .product-card {
+      margin: 50px 30px;
+    }
+    
+    .product-card:nth-child(3n+1) {
+      margin-left: 0;
+    }
+    
+    .card-image {
+      height: 200px;
+    }
+    
+    .product-card h2 {
+      font-size: 24px;
+    }
+
+    .product-card h3 {
+      font-size: 18px;
+    }
+    
+    .product-card p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    
+    .product-card a {
+      margin: 15px;
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    #container {
+      max-width: 1200px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .header {
+      font-size: 24px;
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
+  
+    #container {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+  
+    .product-card {
+      width: 80%;
+      margin: 20px 0;
+    }
+  
+    .product-card p {
+      margin-bottom: 30px;
+    }
+  
+    .card-image {
+      height: 120px;
+    }
+  }
+   /* Card Responsiveness */
+
+   /* Navbar Responsiveness */
+   @media screen and (max-width: 954px) {
+    .logo{
+        margin-right: 10px;
+    }
+    .list{
+        margin-left: 10vw;
+    }
+}
+
+.toggle-button {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+      .tabs {
+        display: none;
+      }
+      .toggle-button {
+        display: block;
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        grid-column: 2 / span 1;
+      }
+      .tabs.show {
+        display: block;
+      }
+      .list {
+        display: block; /* Hide the list by default */
+        position:absolute; /* Position the list absolutely */
+        top: 100%; /* Position the list below the menu button */
+        left: 0; /* Align the list with the left edge of the button */
+        width: 100%; /* Set the width to match the button's width */ 
+        background-color: #FFA384;
+        padding: 0; /* Remove any default padding */
+        margin-left: 0; /* Remove any default margin */
+      }
+      
+      .list a {
+        display: block; /* Display list items as block elements */
+        padding: 10px; /* Add some padding to the list items */
+      }
+      
+      .toggle-button:checked + .tabs .list {
+        display: block; /* Display the list when the toggle button is checked */
+      }
+  }
+  @media screen and (max-width: 600px) {
+    .list {
+      font-size: .6em;
+    }
+}
+
+
+.backdrop{
+    background-image: url(../assets/cleo-backdrop.png);
+    background-size: repeat;
+}
+.shade{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.footer{
+  padding: 20px 15%;
+  color: maroon;
+  background-color:#FFA384;
+  display: flex;
+
+}
+
+.footer div{
+  text-align: center;
+}
+
+.col-2{
+  flex-grow: 2;
+}
+
+.col-2 p {
+  color:maroon;
+  font-style: italic;
+  font-weight: 500;
+
+}
+
+.footer div h3{
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-size: 1.8em;
+  font-family: "AlfaSlabOne";
+}
+
+.social-icons{
+  justify-content: space-evenly;
+  font-size: 2em;
+}
+

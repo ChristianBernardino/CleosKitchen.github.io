@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<link rel="stylesheet" type="text/css" href="../css/Checkout-style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="../assets/Cleo.png"> 
+		<TITLE>Cleo's Kitchen</TITLE>
+</HEAD>
+<BODY>
+	<nav class = "navbar">	
+	
+			<a href = "index.html"> 
+				<img src="../assets/Cleo.png" width="100px" height="100px" class = "navlogo">
+			</a>
+			<a href = "#" class="logo"></a>
+			<button class="toggle-button">&#9776;</button>
+		<div class = "tabs">
+			<ul class = "list">
+				<a href="index.html">Home</a>
+				<a href="../html/About.html">About</a>
+				<a href="../html/Products.html">Products</a>
+				<a href="../html/FAQ.html">FAQ</a>
+				<a href="../html/Cart.html">Cart</a>
+			</ul>	
+		</div>
+	</div>
+	</nav>
+
+	<section class="wrapper">
+	<div class ="shade">
+		<div class="row">
+			<div class="col-75">
+			  <div class="container">
+				<form action="index.html">
+		  
+				  <div class="row">
+					<div class="col-50">
+					  <h3>Shipping Address</h3>
+					  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+					  <input type="text" id="fname" name="firstname" placeholder="Kuya Bogart" required>
+					  <label for="email"><i class="fa fa-envelope"></i> Email</label>
+					  <input type="text" id="email" name="email" placeholder="bogart@email.com" required>
+					  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+					  <input type="text" id="adr" name="address" placeholder="123 West 1st Street" required>
+					  <label for="city"><i class="fa fa-institution"></i> City & Province</label>
+					  <input type="text" id="city" name="city" placeholder="Olongapo City, Zambales" required>
+		  
+					  <div class="row">
+						<div class="col-50">
+						  <label for="state">Contact No.</label>
+						  <input type="text" id="state" name="state" placeholder="ex. 09387991225" required>
+						</div>
+						<div class="col-50">
+						  <label for="zip">Zip</label>
+						  <input type="text" id="zip" name="zip" placeholder="2200" required>
+						</div>
+					  </div>
+					</div>
+		  
+					<div class="col-50">
+						<h3>Payment Method</h3>
+					
+						<label>
+							<input type="radio" name="paymentMethod" checked> 
+							<img id = "cod" src="../assets/cod.png" alt="Cash on Delivery"> 
+						</label>
+					
+						<label>
+							<input type="radio" name="paymentMethod"> 
+							<img id = "gcash" src="../assets/gcash.png" alt="GCash"> 
+						</label>
+					
+						<label>
+							<input type="radio" name="paymentMethod">
+							<img id = "bank" src="../assets/bank.png" alt="Bank Transfer"> 
+						</label>
+					</div>
+				  </div>
+				  <input type="submit" value="Continue to checkout" class="btn" onclick="thankYou()">
+				</form>
+			  </div>
+			</div>
+
+			<div class="col-25">
+			<div class="right-bar" id="right-bar">
+			<div class="cart"><i class="fa-solid fa-cart-shopping"></i><p id="count">0</p></div>
+			<div id = "right-bar-content"></div>
+			<hr>
+			<p><span>Total</span> <span id = "total"> ₱0.00</span></p>
+		  </div>
+			</div>
+		  </div>
+	</div>
+	</section>
+	
+	<footer>
+		<div class="footer">
+		  <div class="col-2">
+			  <h3> Get in Touch.</h3>
+			<br>
+			<div class="social-icons">
+				<a href="https://www.facebook.com/aubreybasabernardino"><i class="fa-brands fa-facebook" style="color: #800000;"></i></a>
+				<a href="mailto: aubernardino14@gmail.com"><i class="fa-solid fa-at" style="color: #800000;"></i></a>
+				<a href="https://msng.link/o?09503655827=vi"><i class="fa-brands fa-viber" style="color: #800000;"></i></a>
+			</div>
+			  <br>
+			  <p> © Christian Bernardino</p>
+		  </div>
+		</div>
+	  </footer>
+	  
+	<!--Hamburger Menu Script--> 
+<script> 
+	const toggleButton = document.querySelector('.toggle-button');
+const tabs = document.querySelector('.tabs');
+
+toggleButton.addEventListener('click', () => {
+  tabs.classList.toggle('show');
+});
+
+function thankYou() {
+  alert("Thank you for purchasing with Cleo's Kitchen!");
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  displayCartInCheckout(cart);
+});
+
+function displayCartInCheckout(cart) {
+  const rightBarContent = document.getElementById('right-bar-content');
+
+  if (cart.length === 0) {
+    rightBarContent.innerHTML = '<h1>Your cart is empty</h1>';
+  } else {
+    rightBarContent.innerHTML = cart
+      .map((items) => {
+        var { title, price } = items;
+        return `
+			<ul style="list-style-type:none">
+              <li>${title}</li>
+              <li>₱ ${price}.00</li>
+			</ul>
+        `;
+      })
+      .join('');
+  }
+}
+
+</script>
+
+<script src="../js/main.js"></script>
+	</BODY>
+	</HTML>
+	
