@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<link rel="stylesheet" type="text/css" href="css/Home-style.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+	<link rel="icon" type="image/png" href="assets/Cleo.png"> 	
+	<TITLE>Cleo's Kitchen</TITLE>
+</HEAD>
+<BODY>
+	<nav class = "navbar">	
+			<a href = "index.html" > 
+				<img src="assets/Cleo.png"  class = "navlogo">
+			</a>	
+			<a href = "#" class="logo"></a>
+			<button class="toggle-button">&#9776;</button>
+		<div class = "tabs">
+			<ul class = "list">
+				<a class="active" href="index.html"> Home </a>
+				<a href="html/About.html">About</a>
+				<a href="html/Products.html">Products</a>
+				<a href="html/FAQ.html">FAQ</a>
+				<a href="html/Cart.html">Cart</a>
+			</ul>	
+		</div>
+	</nav>
+	
+
+<div class = "container">
+	<div class = "outer">
+		<div class="text-container">
+			<h1>Experience the sweet taste of tradition with Cleo's Kitchen</h1>
+		</div>
+	</div>
+</div>
+
+
+<footer>
+	<div class="footer">
+	  <div class="col-2">
+		  <h3> Get in Touch.</h3>
+		<br>
+		<div class="social-icons">
+			<a href="https://www.facebook.com/aubreybasabernardino"><i class="fa-brands fa-facebook" style="color: #800000;"></i></a>
+			<a href="mailto: aubernardino14@gmail.com"><i class="fa-solid fa-at" style="color: #800000;"></i></a>
+			<a href="https://msng.link/o?09503655827=vi"><i class="fa-brands fa-viber" style="color: #800000;"></i></a>
+		</div>
+		  <br>
+		  <p> © Christian Bernardino</p>
+	  </div>
+	</div>
+  </footer>
+
+<script src="js/main.js"></script>
+
+<!-- Hamburger Menu -->
+<script>
+	const toggleButton = document.querySelector('.toggle-button');
+const tabs = document.querySelector('.tabs');
+
+toggleButton.addEventListener('click', () => {
+  tabs.classList.toggle('show');
+});
+</script>
+</BODY>
+</HTML>
